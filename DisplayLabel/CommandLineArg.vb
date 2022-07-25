@@ -1,4 +1,5 @@
-﻿Module CommandLineArg
+﻿' 0.07 | 2021-07-16 | HvB | ExpandEnvironmentVar Added
+Module CommandLineArg
     Dim Template As String
     'Has Async higer priority as the defaults
     Sub Read_Command_Line_Arg()
@@ -123,6 +124,11 @@
 
             LabelText = argument
             xtrace_i("Set Label text = " & LabelText)
+            If InStr(LabelText, "%") > 0 Then
+                LabelText = Environment.ExpandEnvironmentVariables(LabelText)
+                xtrace_i("Set Label text = " & LabelText)
+
+            End If
 
         Next
         xtrace_sube("Read_Command_Line_Arg")

@@ -1,6 +1,6 @@
 ﻿Module Glob
     Public AppName As String = "DisplayLabel"
-    Public AppVer As String = "0.06"
+    Public AppVer As String = "0.08"
     Public AppRoot As String = Application.StartupPath
 
     ' Log File
@@ -22,5 +22,8 @@
     Public ExitProgram As Boolean = False
     Public NoFormBorder As Boolean = True
     Public Transparancy As Double = 0.6
+    Public BGColor As String = ""           ' 2022-04-22
+    Public FontColor As String = ""         ' 2022-04-22
+    Public DisplayMode As Integer = 1       ' N.a. Attampt to create non-transparant text
 
 End Module

@@ -17,6 +17,26 @@
         ' Disable the top window border
         If NoFormBorder Then Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
 
+        ' 2022-04-22
+        If BGColor = "LightGray" Then TextBox1.BackColor = Color.LightGray
+        If BGColor = "LightCyan" Then TextBox1.BackColor = Color.LightCyan
+        'If BGColor = "Transparent" Then TextBox1.BackColor = Color.Transparent ' Not supported
+
+        If FontColor = "White" Then TextBox1.ForeColor = Color.White
+        If FontColor = "Yellow" Then TextBox1.ForeColor = Color.Yellow
+
+        ' N.a. Attempt to create separate non-transparant text with no background
+        If DisplayMode = 2 Then
+            Me.SetStyle(ControlStyles.UserPaint, True)
+            Me.UpdateStyles()
+
+            Dim Label1 As New MyLabel
+            Me.Controls.Add(Label1)
+            Label1.Location = New Point(4, 4)
+            Label1.BringToFront()
+            Label1.Text = LabelText & " New"
+        End If
+
         Me.Opacity = Transparancy
     End Sub
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged

@@ -67,6 +67,22 @@
                         End If
                     End If
 
+                    If DName = "BGColor" Then
+                        BGColor = DVal
+                        xtrace_i("Set BGColor = " & BGColor)
+                    End If
+
+                    If DName = "FontColor" Then
+                        FontColor = DVal
+                        xtrace_i("Set FontColor = " & FontColor)
+                    End If
+
+                    If DName = "DisplayMode" Then
+                        DisplayMode = Val(DVal)
+                        xtrace_i("DisplayMode = " & DVal)
+                    End If
+
+
                     If DName = "HideDelay" Then
                         xtrace_i("Set HideDelay = " & DVal)
                         HideDelay = Val(DVal)
@@ -110,6 +126,7 @@
 
                     If DName = "Transparancy" Then
                         Transparancy = Val(DVal)
+                        xtrace_i("Set Transparancy = " & DVal)
                     End If
 
                 End If
